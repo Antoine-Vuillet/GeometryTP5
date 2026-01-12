@@ -6,21 +6,40 @@ public class EXO1 : MonoBehaviour
     Mesh mesh;
     [SerializeField]List<Vector3> points = new List<Vector3>();
     [SerializeField]List<Vector3> original = new List<Vector3>();
+
+
+    struct Edge
+    {
+        public int a, b;
+
+        public Edge(int v1, int v2)
+        {
+            a = Mathf.Min(v1, v2);
+            b = Mathf.Max(v1, v2);
+        }
+    }
+
+
     void Start()
     {
         mesh = GetComponent<MeshFilter>().mesh;
+        /*
         points.Add(new Vector3(0,0,0));
         points.Add(new Vector3(1, 1, 0));
         points.Add(new Vector3(2, 0, 0));
         points.Add(new Vector3(1, -1, 0));
+        */
         original.AddRange(points);
         for (int i = 0; i < 3; i++)
         {
-            points = StartCutting();
+            points = StartChaikin();
         }
+        Vector3[] vertices = mesh.vertices;
+        int[] triangles = mesh.triangles;
+
     }
 
-    List<Vector3> StartCutting()
+    List<Vector3> StartChaikin()
     {
         List<Vector3> newList = new List<Vector3>();
         for (int i = 0; i < points.Count - 1; i++)

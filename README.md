@@ -11,3 +11,6 @@ Désactivé, possible d'activer dans l'inspecteur, résultat obtenu non satisfai
 
 ### RemoveDoubles
 Méthodes supprimant les arête en doublons donné par la méthode "GetEdges"
+
+### Charles
+Tentative de subdivision, honnêtement, je l'ai tellement modifiée que je ne me souviens plus de tout et la forme obtenue manque de faces
